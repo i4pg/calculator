@@ -1,39 +1,37 @@
-function operationController(operator, ...operands) {
+function operationController(operator, firstOperand, secondOperand) {
   switch (operator) {
     case '+':
-      return add(operands[0], operands[1])
+      return add(firstOperand, secondOperand)
     case '-':
-      return subtract(operands[0], operands[1])
+      return subtract(firstOperand, secondOperand)
     case '*':
-      return multiply(operands[0], operands[1])
+      return multiply(firstOperand, secondOperand)
     case '/':
-      return divide(operands[0], operands[1])
+      return divide(firstOperand, secondOperand)
     case '^':
-      return exponent(operands[0], operands[1])
+      return exponent(firstOperand, secondOperand)
 
     default:
       throw new Error(`${operator} is invalid operator`);
   }
 }
 
-function add(a, b) {
-  return a + b
+function add(x, y) {
+  return x + y
 }
 
-function subtract(a, b) {
-  return a - b
+function subtract(x, y) {
+  return x - y
 }
 
-function multiply(a, b) {
-  return a * b
+function multiply(x, y) {
+  return x * y
 }
 
-function divide(a, b) {
-  return a / b
+function divide(x, y) {
+  return x / y
 }
 
-function exponent(a, b) {
-  return a ** b
+function exponent(x, y) {
+  return x ** y
 }
-
-console.log(operationController('$', 2, 4, 4, 2, 1))
