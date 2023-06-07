@@ -16,7 +16,7 @@ You can try it online [here](https://i4pg.github.io/calculator).
 
 ### Wireframe
 
-<!-- ![](./src/image/wireframe/wireframe.png) -->
+![](./src/image/wireframe/Untitled-2023-06-07-1555.png)
 
 ### ScreenShots
 
@@ -60,6 +60,7 @@ Then open the `index.html` file in your web browser to start playing the game.
     - [ ] Zero divider Error
     - [ ] Clear Button
     - [ ] Backspace Button
+    - [ ] Sounds Effects
 
 ## Contributing
 
