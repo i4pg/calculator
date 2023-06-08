@@ -69,7 +69,7 @@ nav lord-icon, nav a img {
 /* HEADER SECTION */
 
 header section {
-  padding: 1em;
+  padding: .5em;
   text-align: right;
   font-size: 2rem;
   flex: 2;
@@ -83,5 +83,24 @@ header section p {
 /* MAIN */
 
 main {
+  padding: 1em 0;
   flex: auto;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+main .button {
+  border-radius: 50%;
+  background-color: linen;
+  width: calc(90% / 4);
+  height: calc(90% / 5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+main .number {
+  background-color: lavender;
 }
