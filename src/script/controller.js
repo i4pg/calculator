@@ -11,40 +11,39 @@ function displayResult() {
   display.textContent = getResult()
 }
 
-function insertNumberToDisplay(number) {
-  if (display.textContent[0] === '0') {
-    display.textContent = number
-  } else {
-    display.textContent += number
-  }
-}
-
-function emptyDisplay() {
+function displayNumberController(number) {
+  // this switch toggles when using immediateOperetor 
+  // new operation's first operand is taken from the textContent value
   if (isNewOperand) {
     resetDisplay()
     isNewOperand = false
   }
+
+  // get rid of left zero
+  display.textContent === '0'
+    ? display.textContent = number
+    : display.textContent += number
 }
 
-function prepareNewOpration(operator) {
-  if (operator) {
-    liveOperation = new Operation(display.textContent, operator)
-  }
+
+function setNewOpration(immediateOperetor) {
+  // immediateOperetor: get first operand for next operation
+  // from last operation's result
+  immediateOperetor
+    ? liveOperation = new Operation(display.textContent, immediateOperetor)
+    : ""
   isNewOperand = true
 }
 
-function setOperands(operator = null) {
+function operetorController(operator) {
   if (!liveOperation) {
     liveOperation = new Operation(display.textContent, operator)
     resetDisplay()
   } else if (!liveOperation.secondOperand) {
-    liveOperation.setSecondOperand(display.textContent)
-    displayResult()
-    prepareNewOpration(operator)
+    equalButton(operator)
   } else {
     liveOperation = new Operation(display.textContent, operator)
     resetDisplay()
-    console.log('3')
   }
 }
 
@@ -54,18 +53,23 @@ function getResult() {
   }
 }
 
+function equalButton(immediateOperetor = null) {
+  liveOperation.setSecondOperand(display.textContent)
+  displayResult()
+  setNewOpration(immediateOperetor)
+}
+
 function buttonsController(e) {
   const button = e.target.textContent
 
   if (/\d/.test(button)) {
-    emptyDisplay()
-    insertNumberToDisplay(button)
+    displayNumberController(button)
   } else if (/[AC||C||~||\.]/.test(button)) {
     displayResult(button)
   } else if (/=/.test(button) && liveOperation?.firstOperand) {
-    setOperands()
+    equalButton()
   } else if (/[\+||\-||\^||\×||\÷]/.test(button)) {
-    setOperands(button)
+    operetorController(button)
   }
 }
 
