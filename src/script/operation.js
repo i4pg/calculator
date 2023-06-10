@@ -1,24 +1,17 @@
-function Operation(firstOperand, operator, secondOperand = null) {
+function Operation(firstOperand, operator = null, secondOperand = null) {
   this.firstOperand = firstOperand
   this.operator = operator
   this.secondOperand = secondOperand
-
+  this.setFirstOperand = (operand) => {
+    this.firstOperand = operand
+  }
   this.setSecondOperand = (operand) => {
     this.secondOperand = operand
   }
-
-  this.calculate = () => {
-    return Calculator.operationController(this.operator, +this.firstOperand, +this.secondOperand)
+  this.calculate = function() {
+    return Calculator.operationController(this)
   }
-
-  result = this.firstOperand
-  emptyDisplay()
-}
-
-Operation.constructorController = (operator, operand) => {
-  if (!recentOperation) {
-    return recentOperation = new Operation(operand, operator)
-  } else {
-    Operation.assignSecondOperand(operand)
+  this.hasBothOperands = () => {
+    return this.firstOperand && this.secondOperand
   }
 }

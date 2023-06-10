@@ -1,8 +1,11 @@
 function Calculator() {
 }
 
-Calculator.operationController = (operator, firstOperand, secondOperand) => {
-  console.log(firstOperand, secondOperand, operator)
+Calculator.operationController = (operation) => {
+  const operator = operation.operator
+  const firstOperand = +operation.firstOperand
+  const secondOperand = +operation.secondOperand
+
   switch (operator) {
     case '+':
       return Calculator.add(firstOperand, secondOperand)
