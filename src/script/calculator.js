@@ -1,37 +1,41 @@
-function operationController(operator, firstOperand, secondOperand) {
+function Calculator() {
+}
+
+Calculator.operationController = (operator, firstOperand, secondOperand) => {
+  console.log(firstOperand, secondOperand, operator)
   switch (operator) {
     case '+':
-      return add(firstOperand, secondOperand)
+      return Calculator.add(firstOperand, secondOperand)
     case '-':
-      return subtract(firstOperand, secondOperand)
-    case '*':
-      return multiply(firstOperand, secondOperand)
+      return Calculator.subtract(firstOperand, secondOperand)
+    case '×':
+      return Calculator.multiply(firstOperand, secondOperand)
     case '/':
-      return divide(firstOperand, secondOperand)
+      return Calculator.divide(firstOperand, secondOperand)
     case '^':
-      return exponent(firstOperand, secondOperand)
+      return Calculator.exponent(firstOperand, secondOperand)
 
     default:
       throw new Error(`${operator} is invalid operator`);
   }
 }
 
-function add(x, y) {
+Calculator.add = function(x, y) {
   return x + y
 }
 
-function subtract(x, y) {
+Calculator.subtract = function(x, y) {
   return x - y
 }
 
-function multiply(x, y) {
+Calculator.multiply = function(x, y) {
   return x * y
 }
 
-function divide(x, y) {
+Calculator.divide = function(x, y) {
   return x / y
 }
 
-function exponent(x, y) {
+Calculator.exponent = function(x, y) {
   return x ** y
 }
