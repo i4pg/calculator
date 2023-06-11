@@ -30,10 +30,9 @@ function displayResult() {
 
 function backspace() {
   display.textContent = display.textContent.split('').slice(1).join("")
-
-  if (display.textContent === "") {
-    display.textContent = 0
-  }
+  display.textContent === ""
+    ? resetDisplay()
+    : ""
 }
 
 function getResult() {
