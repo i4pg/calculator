@@ -45,13 +45,15 @@ Then open the `index.html` file in your web browser to start playing the game.
 
 ### To-do
 
-- [x] OOP -Object Constructor-
+> NOTE: for now I'll go with old school -Object Constructor-
+
+- [x] OOP 
 - [x] Calculator Logic
     - [x] Add
     - [x] Subtract
     - [x] Multiply
     - [x] Divide
-- [ ] Calculator UX
+- [x] Calculator UX
     - [x] Display Numbers
     - [x] Support float numbers
     - [x] Support Infinite operations
@@ -60,12 +62,16 @@ Then open the `index.html` file in your web browser to start playing the game.
     - [x] Zero divider Error
     - [x] Clear Button
     - [x] Backspace Button
-    - [ ] Sounds Effects
+    - [x] Sounds Effects
 -[ ] UI
+    - [ ] Calculator display
+    - [ ] calculator buttons
     - [ ] Mobile-first Responsive
-    - [ ] Odin Color palette 
+    - [ ] Catppuccin Color palette 
     - [ ] Dark/Light mode
     - [ ] aside navigation
+    - [ ] button hover animation
+    - [ ] Footer
 
 ## Contributing
 
