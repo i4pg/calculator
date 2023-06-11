@@ -1,72 +1,84 @@
 const buttons = document.querySelectorAll('.button')
 const display = document.getElementById('display')
-let liveOperation = null // used to handle operation object => {firstOp,secondOp,operator}
+let recentOperation = null // used to handle operation object => {firstOp,secondOp,operator}
 let isNewOperand = true
+let isFloat = false
 
 function resetDisplay() {
   display.textContent = 0
-}
-
-function getResult() {
-  if (liveOperation?.hasBothOperands) {
-    return liveOperation.calculate()
-  }
 }
 
 function displayResult() {
   display.textContent = getResult()
 }
 
-function displayNumberController(number) {
-  // clear the display when there's an old result on the screen
-  if (isNewOperand) {
-    resetDisplay()
-    isNewOperand = false
-  }
+function getResult() {
+  if (recentOperation?.hasBothOperands) {
+    const result = recentOperation.calculate()
+    const float = recentOperation.isFloatOperation()
 
+    return float ? result.toFixed(2) : result
+  }
+}
+
+function displayNumberController(number) {
   // get rid of left zero
+  console.log(display.textContent)
   display.textContent === '0'
     ? display.textContent = number
     : display.textContent += number
 }
 
+function setRecentOperationOperands(operator = null) {
+  operator
+    ? recentOperation = new Operation(display.textContent, operator)
+    : recentOperation.setSecondOperand(display.textContent)
+}
 
-function setNewOpration(immediateOperetor) {
-  // immediateOperetor: get first operand for next operation
-  // from last operation's result
-  immediateOperetor
-    ? liveOperation = new Operation(display.textContent, immediateOperetor)
-    : ""
+function isNewOperandToggle() {
+  // clear the display when there's an old result on the screen
+  if (isNewOperand) {
+    resetDisplay()
+    isNewOperand = false
+  }
+}
+
+function equalButton(immediateOperetor = null) {
+  setRecentOperationOperands()
+  displayResult()
+
+  // assign result as first operand for new operation
+  setRecentOperationOperands(immediateOperetor)
   isNewOperand = true
 }
 
 function operetorController(operator) {
-  if (!liveOperation) {
-    liveOperation = new Operation(display.textContent, operator)
-    resetDisplay()
-  } else if (!liveOperation.secondOperand) {
+  if (recentOperation && !recentOperation?.secondOperand) {
     equalButton(operator)
   } else {
-    liveOperation = new Operation(display.textContent, operator)
+    setRecentOperationOperands(operator)
     resetDisplay()
   }
+  isFloat = false
 }
 
-
-function equalButton(immediateOperetor = null) {
-  liveOperation.setSecondOperand(display.textContent)
-  displayResult()
-  setNewOpration(immediateOperetor)
+function setFloatCalculation() {
+  isFloat = true
+  displayNumberController('.')
 }
 
 function buttonsController(e) {
   const button = e.target.textContent
 
   if (/\d/.test(button)) {
+    isNewOperandToggle()
     displayNumberController(button)
-  } else if (/[AC||C||~||\.]/.test(button)) {
-    displayResult(button)
-  } else if (/=/.test(button) && liveOperation?.firstOperand) {
+  } else if (/[\.]/.test(button) && !isFloat) {
+    isNewOperandToggle()
+    setFloatCalculation()
+  } else if (/[AC||C||~]/.test(button)) {
+    displayResult()
+  } else if (/=/.test(button) && recentOperation?.firstOperand) {
     equalButton()
   } else if (/[\+||\-||\^||\×||\÷]/.test(button)) {
     operetorController(button)
