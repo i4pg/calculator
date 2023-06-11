@@ -4,6 +4,16 @@ let recentOperation = null // used to handle operation object => {firstOp,second
 let isNewOperand = true
 let isFloat = false
 
+function resetAll() {
+  recentOperation = null
+  resetDisplay()
+}
+
+function setFloatCalculation() {
+  isFloat = true
+  displayNumberController('.')
+}
+
 function resetDisplay() {
   display.textContent = 0
 }
@@ -35,7 +45,7 @@ function setRecentOperationOperands(operator = null) {
     : recentOperation.setSecondOperand(display.textContent)
 }
 
-function isNewOperandToggle() {
+function newOperandToggle() {
   // clear the display when there's an old result on the screen
   if (isNewOperand) {
     resetDisplay()
@@ -62,21 +72,18 @@ function operetorController(operator) {
   isFloat = false
 }
 
-function setFloatCalculation() {
-  isFloat = true
-  displayNumberController('.')
-}
-
 function buttonsController(e) {
   const button = e.target.textContent
 
   if (/\d/.test(button)) {
-    isNewOperandToggle()
+    newOperandToggle()
     displayNumberController(button)
+  } else if (/AC/.test(button)) {
+    resetAll()
   } else if (/[\.]/.test(button) && !isFloat) {
-    isNewOperandToggle()
+    newOperandToggle()
     setFloatCalculation()
-  } else if (/[AC||C||~]/.test(button)) {
+  } else if (/[C||~]/.test(button)) {
     displayResult()
   } else if (/=/.test(button) && recentOperation?.firstOperand) {
     equalButton()

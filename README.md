@@ -53,12 +53,12 @@ Then open the `index.html` file in your web browser to start playing the game.
     - [x] Divide
 - [ ] Calculator UX
     - [x] Display Numbers
-    - [ ] Support float numbers
+    - [x] Support float numbers
     - [x] Support Infinite operations
     - [ ] Support Keyboard input
-    - [ ] Round with long decimals -Prevent Overflow-
+    - [x] Round with long decimals -Prevent Overflow-
     - [ ] Zero divider Error
-    - [ ] Clear Button
+    - [x] Clear Button
     - [ ] Backspace Button
     - [ ] Sounds Effects
 -[ ] UI
