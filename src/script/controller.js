@@ -8,34 +8,47 @@ function operetorController(operator) {
   isFloat = false
 }
 
-function buttonsController(e) {
-  const button = e.type === 'keyup'
-    ? e.key
-    : e.target.getAttribute('value')
-
+function buttonsController(button) {
   if (/\d/.test(button)) {
+    playSound()
     newOperandToggle()
     displayNumberController(button)
   } else if (/[\.]/.test(button) && !isFloat) {
+    playSound()
     newOperandToggle()
     setFloatCalculation()
   } else if (/^C$/.test(button)) {
+    playSound()
     resetDisplay()
   } else if (/^AC$/.test(button)) {
+    playSound()
     resetAll()
-  } else if (/=/.test(button) && recentOperation?.firstOperand) {
+  } else if (/[=||^Enter$]/.test(button) && recentOperation?.firstOperand) {
+    playSound()
     equalButton()
   } else if (/[\+||\-||\^||\*||\/]/.test(button)) {
+    playSound()
     operetorController(button)
   } else if (/Backspace/.test(button)) {
+    playSound()
     backspace()
   }
+}
+
+function setEventType(e) {
+  const event
+    = e.type === 'keyup'
+      ? e.key
+      : e.target.getAttribute('value')
+
+  buttonsController(event)
 }
 
 Array
   .from(buttons)
   .forEach(button =>
-    button.addEventListener('click', buttonsController)
+    button
+      .addEventListener('click', setEventType)
   )
 
-addEventListener('keyup', buttonsController)
+addEventListener('keyup', setEventType)

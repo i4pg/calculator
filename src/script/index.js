@@ -1,8 +1,14 @@
+const buttonSound = document.getElementById('button-sound')
 const buttons = document.querySelectorAll('.button')
 const display = document.getElementById('display')
 let recentOperation = null // used to handle operation object => {firstOp,secondOp,operator}
 let isNewOperand = true
 let isFloat = false
+
+function playSound() {
+  buttonSound.currentTime = 0
+  buttonSound.play()
+}
 
 function resetAll() {
   recentOperation = null
