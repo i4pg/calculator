@@ -13,8 +13,10 @@ Calculator.operationController = (operation) => {
       return Calculator.subtract(firstOperand, secondOperand)
     case '×':
       return Calculator.multiply(firstOperand, secondOperand)
-    case '/':
-      return Calculator.divide(firstOperand, secondOperand)
+    case '÷':
+      return firstOperand === 0
+        ? "Oops you can't devide by zero"
+        : Calculator.divide(firstOperand, secondOperand)
     case '^':
       return Calculator.exponent(firstOperand, secondOperand)
 

@@ -57,7 +57,7 @@ Then open the `index.html` file in your web browser to start playing the game.
     - [x] Support Infinite operations
     - [ ] Support Keyboard input
     - [x] Round with long decimals -Prevent Overflow-
-    - [ ] Zero divider Error
+    - [x] Zero divider Error
     - [x] Clear Button
     - [x] Backspace Button
     - [ ] Sounds Effects
