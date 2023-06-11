@@ -92,12 +92,12 @@ function buttonsController(e) {
     resetDisplay()
   } else if (/^AC$/.test(button)) {
     resetAll()
-  } else if (/[~]/.test(button)) {
-    backspace()
   } else if (/=/.test(button) && recentOperation?.firstOperand) {
     equalButton()
   } else if (/[\+||\-||\^||\×||\÷]/.test(button)) {
     operetorController(button)
+  } else {
+    backspace()
   }
 }
 

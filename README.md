@@ -65,6 +65,7 @@ Then open the `index.html` file in your web browser to start playing the game.
     - [ ] Mobile-first Responsive
     - [ ] Odin Color palette 
     - [ ] Dark/Light mode
+    - [ ] aside navigation
 
 ## Contributing
 
