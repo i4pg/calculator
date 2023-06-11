@@ -63,7 +63,7 @@ Then open the `index.html` file in your web browser to start playing the game.
     - [x] Clear Button
     - [x] Backspace Button
     - [x] Sounds Effects
--[ ] UI
+- [ ] UI
     - [ ] Calculator display
     - [ ] calculator buttons
     - [ ] Mobile-first Responsive
