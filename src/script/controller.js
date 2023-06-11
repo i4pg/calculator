@@ -7,13 +7,18 @@ function resetDisplay() {
   display.textContent = 0
 }
 
+function getResult() {
+  if (liveOperation?.hasBothOperands) {
+    return liveOperation.calculate()
+  }
+}
+
 function displayResult() {
   display.textContent = getResult()
 }
 
 function displayNumberController(number) {
-  // this switch toggles when using immediateOperetor 
-  // new operation's first operand is taken from the textContent value
+  // clear the display when there's an old result on the screen
   if (isNewOperand) {
     resetDisplay()
     isNewOperand = false
@@ -47,11 +52,6 @@ function operetorController(operator) {
   }
 }
 
-function getResult() {
-  if (liveOperation?.hasBothOperands) {
-    return liveOperation.calculate()
-  }
-}
 
 function equalButton(immediateOperetor = null) {
   liveOperation.setSecondOperand(display.textContent)

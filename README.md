@@ -45,22 +45,24 @@ Then open the `index.html` file in your web browser to start playing the game.
 
 ### To-do
 
-- [ ] OOP -Object Constructor-
-- [ ] Calculator Logic
-    - [ ] Add
-    - [ ] Subtract
-    - [ ] Multiply
-    - [ ] Divide
+- [x] OOP -Object Constructor-
+- [x] Calculator Logic
+    - [x] Add
+    - [x] Subtract
+    - [x] Multiply
+    - [x] Divide
 - [ ] Calculator UX
-    - [ ] Display Numbers
+    - [x] Display Numbers
     - [ ] Support float numbers
-    - [ ] Support Infinite operations
+    - [x] Support Infinite operations
     - [ ] Support Keyboard input
     - [ ] Round with long decimals -Prevent Overflow-
     - [ ] Zero divider Error
     - [ ] Clear Button
     - [ ] Backspace Button
     - [ ] Sounds Effects
+-[ ] UI
+    - [ ] Mobile-first Responsive
 
 ## Contributing
 
