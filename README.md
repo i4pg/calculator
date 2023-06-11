@@ -59,10 +59,12 @@ Then open the `index.html` file in your web browser to start playing the game.
     - [x] Round with long decimals -Prevent Overflow-
     - [ ] Zero divider Error
     - [x] Clear Button
-    - [ ] Backspace Button
+    - [x] Backspace Button
     - [ ] Sounds Effects
 -[ ] UI
     - [ ] Mobile-first Responsive
+    - [ ] Odin Color palette 
+    - [ ] Dark/Light mode
 
 ## Contributing
 

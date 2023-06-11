@@ -4,6 +4,14 @@ let recentOperation = null // used to handle operation object => {firstOp,second
 let isNewOperand = true
 let isFloat = false
 
+function backspace() {
+  display.textContent = display.textContent.split('').slice(1).join("")
+
+  if (display.textContent === "") {
+    display.textContent = 0
+  }
+}
+
 function resetAll() {
   recentOperation = null
   resetDisplay()
@@ -33,7 +41,6 @@ function getResult() {
 
 function displayNumberController(number) {
   // get rid of left zero
-  console.log(display.textContent)
   display.textContent === '0'
     ? display.textContent = number
     : display.textContent += number
@@ -78,13 +85,15 @@ function buttonsController(e) {
   if (/\d/.test(button)) {
     newOperandToggle()
     displayNumberController(button)
-  } else if (/AC/.test(button)) {
-    resetAll()
   } else if (/[\.]/.test(button) && !isFloat) {
     newOperandToggle()
     setFloatCalculation()
-  } else if (/[C||~]/.test(button)) {
-    displayResult()
+  } else if (/^C$/.test(button)) {
+    resetDisplay()
+  } else if (/^AC$/.test(button)) {
+    resetAll()
+  } else if (/[~]/.test(button)) {
+    backspace()
   } else if (/=/.test(button) && recentOperation?.firstOperand) {
     equalButton()
   } else if (/[\+||\-||\^||\×||\÷]/.test(button)) {
