@@ -23,19 +23,20 @@ function buttonsController(button) {
   } else if (/^AC$/.test(button)) {
     playSound()
     resetAll()
-  } else if (/[=||^Enter$]/.test(button) && recentOperation?.firstOperand) {
-    playSound()
-    equalButton()
   } else if (/[\+||\-||\^||\*||\/]/.test(button)) {
     playSound()
     operetorController(button)
   } else if (/Backspace/.test(button)) {
     playSound()
     backspace()
+  } else if (/[=||^Enter$]/.test(button) && recentOperation?.firstOperand) {
+    playSound()
+    equalButton()
   }
 }
 
 function setEventType(e) {
+  console.log(e)
   const event
     = e.type === 'keyup'
       ? e.key
