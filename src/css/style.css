@@ -120,16 +120,21 @@ header section p {
 /* ASIDE */
 
 aside {
+  padding: 2em;
   position: absolute;
   width: 40%;
   height: 100%;
   background-color: var(--bg);
   z-index: 999;
   left: 0;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: space-between;
+  align-items: start;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
 }
 
 aside .tools {
-  padding: 2em;
   display: flex;
   flex-flow: column wrap;
 }
@@ -140,13 +145,42 @@ aside .tools div {
   justify-content: space-start;
   align-items: center;
   gap: 1em;
+  cursor: pointer;
 }
 
-aside .tools div i {
+aside .tools div:hover {
+  color: var(--display);
+}
+
+#unmute, #light {
+  display: none;
 }
 
 aside .tools div p {
   font-weight: normal;
+}
+
+aside .footer {
+  align-self: center;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+  gap: 1em;
+}
+
+
+aside .footer i {
+  font-size: 1.5rem;
+  color: var(--text);
+}
+
+i:hover, a.hover {
+  color: var(--display) !important;
+}
+
+aside .footer img {
+  width: 1.5rem;
 }
 
 /* MAIN */

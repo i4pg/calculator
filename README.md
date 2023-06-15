@@ -67,14 +67,12 @@ Then open the `index.html` file in your web browser to start playing the game.
     - [ ] buttons hover effect on click event
 - [ ] UI
     - [ ] hover effect on keyboard click
-    - [ ] aside menu
-    - [ ] Calculator display
-    - [ ] calculator buttons
-    - [ ] Mobile-first Responsive
-    - [ ] Catppuccin Color palette 
-    - [ ] Dark/Light mode
+    - [x] Calculator display
+    - [x] calculator buttons
+    - [x] Mobile-first Responsive
+    - [x] Dark/Light mode
     - [ ] aside navigation
-    - [ ] button hover animation
+    - [x] button hover animation
     - [ ] Footer
 
 ## Contributing
