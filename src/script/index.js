@@ -6,6 +6,10 @@ let isNewOperand = true
 let isFloat = false
 let sound = true
 
+function addHoverEffect(button) {
+  button.style.classList.add('hover')
+}
+
 function playSound() {
   if (sound) {
     buttonSound.currentTime = 0

@@ -92,11 +92,12 @@ header {
 
 /* HEADER NAV */
 
-nav {
+header nav {
   width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  cursor: pointer;
 }
 
 nav lord-icon, nav a img {
@@ -122,12 +123,12 @@ header section p {
 aside {
   padding: 2em;
   position: absolute;
-  width: 30%;
+  width: 40%;
   height: 100%;
   background-color: var(--bg);
   z-index: 999;
   left: 0;
-  display: flex;
+  display: none;
   flex-flow: column wrap;
   justify-content: space-between;
   align-items: start;

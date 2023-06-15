@@ -36,7 +36,6 @@ function buttonsController(button) {
 }
 
 function setEventType(e) {
-  console.log(e)
   const event
     = e.type === 'keyup'
       ? e.key
