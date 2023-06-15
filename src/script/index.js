@@ -4,10 +4,13 @@ const display = document.getElementById('display')
 let recentOperation = null // used to handle operation object => {firstOp,secondOp,operator}
 let isNewOperand = true
 let isFloat = false
+let sound = true
 
 function playSound() {
-  buttonSound.currentTime = 0
-  buttonSound.play()
+  if (sound) {
+    buttonSound.currentTime = 0
+    buttonSound.play()
+  }
 }
 
 function resetAll() {

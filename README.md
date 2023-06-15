@@ -65,6 +65,7 @@ Then open the `index.html` file in your web browser to start playing the game.
     - [x] Sounds Effects
     - [x] Pressing Enter same as `=` 
     - [ ] buttons hover effect on click event
+    - [x] Sounds On/Off
 - [ ] UI
     - [ ] hover effect on keyboard click
     - [x] Calculator display

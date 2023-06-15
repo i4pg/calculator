@@ -122,7 +122,7 @@ header section p {
 aside {
   padding: 2em;
   position: absolute;
-  width: 40%;
+  width: 30%;
   height: 100%;
   background-color: var(--bg);
   z-index: 999;
