@@ -53,7 +53,7 @@ Then open the `index.html` file in your web browser to start playing the game.
     - [x] Subtract
     - [x] Multiply
     - [x] Divide
-- [x] Calculator UX
+- [ ] Calculator UX
     - [x] Display Numbers
     - [x] Support float numbers
     - [x] Support Infinite operations
@@ -64,7 +64,10 @@ Then open the `index.html` file in your web browser to start playing the game.
     - [x] Backspace Button
     - [x] Sounds Effects
     - [x] Pressing Enter same as `=` 
+    - [ ] buttons hover effect on click event
 - [ ] UI
+    - [ ] hover effect on keyboard click
+    - [ ] aside menu
     - [ ] Calculator display
     - [ ] calculator buttons
     - [ ] Mobile-first Responsive

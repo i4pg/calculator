@@ -8,26 +8,68 @@
   <link rel="icon" type="image/x-icon" href="src/image/favicon.png">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/iconoir-icons/iconoir@main/css/iconoir.css">
   <link rel="stylesheet" href="src/css/style.css">
-  <script src="https://cdn.lordicon.com/bhenfmcm.js" defer></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/iconoir-icons/iconoir@main/css/iconoir.css">
   <script src="src/script/calculator.js" defer></script>
   <script src="src/script/operation.js" defer></script>
   <script src="src/script/index.js" defer></script>
   <script src="src/script/controller.js" defer></script>
 </head>
 
-<body class="light">
+<body class="dark">
   <header>
     <nav>
-      <lord-icon src="https://cdn.lordicon.com/hwuyodym.json" trigger="hover" colors="primary:#121331" state="hover-2">
-      </lord-icon>
-      <a class="hvr-icon-push" href="https://theodinproject.com" target="_blank">
-        <img class="hvr-icon odin" style="width:2em;height:2em" src="src/icons/odin-icon.svg" alt="odin logo">
-      </a>
+      <!-- <a class="hvr-icon-push" href="https://theodinproject.com" target="_blank"> -->
+      <!--   <img class="hvr-icon odin" style="width:2em;height:2em" src="src/icons/odin-icon.svg" alt="odin logo"> -->
+      <!-- </a> -->
     </nav>
     <section id="display">
-      <p>0</p>
+      0
     </section>
   </header>
+  <aside>
+    <section class="tools">
+      <div>
+        <i id="dark" class="iconoir-half-moon"></i>
+        <p>Dark</p>
+      </div>
+      <div>
+        <i id="light" class="iconoir-sun-light"></i>
+        <p>Light</p>
+      </div>
+      <div id="mute">
+        <?xml version="1.0" encoding="UTF-8"?><svg width="1rem" viewBox="0 0 24 24" stroke-width="1.5" fill="none"
+          xmlns="http://www.w3.org/2000/svg" color="#000000">
+          <g clip-path="url(#sound-off_svg__clip0_3173_16686)" stroke="#000000" stroke-width="1.5">
+            <path d="M18 14l2-2m2-2l-2 2m0 0l-2-2m2 2l2 2" stroke-linecap="round" stroke-linejoin="round"></path>
+            <path
+              d="M2 13.857v-3.714a2 2 0 012-2h2.9a1 1 0 00.55-.165l6-3.956a1 1 0 011.55.835v14.286a1 1 0 01-1.55.835l-6-3.956a1 1 0 00-.55-.165H4a2 2 0 01-2-2z">
+            </path>
+          </g>
+          <defs>
+            <clipPath id="sound-off_svg__clip0_3173_16686">
+              <path fill="#fff" d="M0 0h24v24H0z"></path>
+            </clipPath>
+          </defs>
+        </svg>
+        <p>Unmute</p>
+      </div>
+      <div>
+        <i id="unmute" class="iconoir-sound-high"></i>
+        <p>Mute</p>
+      </div>
+    </section>
+    <ul>
+      <li>
+      </li>
+      <li><a title="Like this Project !" href="https://github.com/i4pg/javascript-calculator/stargazers"><i
+            class="iconoir-heart"></i></li></a>
+      <li><i class="iconoir-settings"></i></li>
+      <li><a href="https://github.com/i4pg" target="_blank"><i class="iconoir-github"></i></a>
+      </li>
+      <li><a href="https://twitter.com/wiyih" target="_blank"><i class="iconoir-twitter"></i></a>
+      </li>
+    </ul>
+  </aside>
   <main>
     <div value="AC" class="button blue hvr-shrink">AC</div>
     <div value="C" class="button blue hvr-shrink">C</div>
@@ -55,7 +97,9 @@
     <div value="=" class="button">=</div>
   </main>
   <footer>
-    <a href="https://lordicon.com/">Icons by Lordicon.com</a>
+    <p>Made by<a href="https://twitter.com/wiyih">Abdullah Alattas</a></p>
+    <p>Icons by <a href="https://lordicon.com/">Lordicon.com</a></p>
+    <p>Color palette by <a href="https://farbvelo.elastiq.ch/">FarbVélo</a></p>
   </footer>
   <audio id="button-sound" src="src/sound/button-snap.mp3"></audio>
 </body>

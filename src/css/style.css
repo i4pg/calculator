@@ -1,17 +1,37 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+
 /* VARIABLES */
+:root {
+  --liaison: #8d4d5b;
+  --never-forget: #a66f7d;
+  --pink-champagne: #e3dbe8;
+
+  --classy-mauve: #be93a0;
+  --mauvelous: #d6b8c5;
+  --minute-mauve: #eddeeb;
+  --silver-fox: #b8b2bc;
+  --gull: #8f8a92;
+
+  --excalibur: #68646b;
+  --tuxedo: #434046;
+}
 
 .dark {
-  --moonraker: hsl(255,47.27%,78.43%);
-  --petrified-purple: hsl(252.97,45.68%,68.24%);
-  --magic-carpet: hsl(236.73,29.1%,62.94%);
-  --bg:#000;
+  --bg: var(--gull);
+  --display: var(--liaison);
+  --numbers: var(--never-forget);
+  --buttons: var(--excalibur);
+  --text: var(--pink-champagne);
+  --icon: var(--liaison);
 }
 
 .light {
-  --moonraker: hsl(255,47.27%,88.43%);
-  --petrified-purple: hsl(252.97,45.68%,88.24%);
-  --magic-carpet: hsl(236.73,29.1%,80.94%);
-  --bg:#EEE;
+  --bg: var(--minute-mauve);
+  --display: var(--mauvelous);
+  --numbers: var(--classy-mauve);
+  --buttons: var(--silver-fox);
+  --text: var(--tuxedo);
+  --icon: var(--liaison);
 }
 
 /* RESET */
@@ -39,6 +59,10 @@ a {
   color: none;
 }
 
+p {
+  margin: .2em;
+}
+
 /* BODY */
 
 body {
@@ -47,7 +71,10 @@ body {
   height: 100vh;
   display: flex;
   flex-flow: column wrap;
-  background: var(--bg)
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Roboto Mono', monospace, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-weight: 900;
 }
 
 /* HEADER */
@@ -58,9 +85,9 @@ header {
   padding-top: 1em;
   display: flex;
   flex-flow: column wrap;
-  background-color: var(--petrified-purple);
+  background-color: var(--display);
   border-radius: 0 0 3em 3em;
-  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
 /* HEADER NAV */
@@ -90,6 +117,37 @@ header section p {
   margin: 0;
 }
 
+/* ASIDE */
+
+aside {
+  position: absolute;
+  width: 40%;
+  height: 100%;
+  background-color: var(--bg);
+  z-index: 999;
+  left: 0;
+}
+
+aside .tools {
+  padding: 2em;
+  display: flex;
+  flex-flow: column wrap;
+}
+
+aside .tools div {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-start;
+  align-items: center;
+  gap: 1em;
+}
+
+aside .tools div i {
+}
+
+aside .tools div p {
+  font-weight: normal;
+}
 
 /* MAIN */
 
@@ -110,16 +168,35 @@ main .button {
   justify-content: center;
   align-items: center;
   cursor: pointer;
-  background-color: var(--magic-carpet);
+  background-color: var(--buttons);
   box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
 }
 
 
 main .number {
-  background-color: var(--moonraker);
+  background-color: var(--numbers);
 }
 
-/* Shrink */
+/* FOOTER */
+
+footer {
+  padding: 1em;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: normal;
+}
+
+footer p {
+  color: var(--text);
+}
+
+footer a {
+  color: var(--numbers);
+}
+
+/* Shrink effect for buttons */
 .hvr-shrink {
   display: inline-block;
   vertical-align: middle;
