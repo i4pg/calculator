@@ -66,15 +66,15 @@ Then open the `index.html` file in your web browser to start playing the game.
     - [x] Pressing Enter same as `=` 
     - [ ] buttons hover effect on click event
     - [x] Sounds On/Off
-- [ ] UI
-    - [ ] hover effect on keyboard click
+    - [ ] aside navigation
+- [x] UI
+    - [x] Smooth colors
     - [x] Calculator display
     - [x] calculator buttons
     - [x] Mobile-first Responsive
     - [x] Dark/Light mode
-    - [ ] aside navigation
     - [x] button hover animation
-    - [ ] Footer
+    - [x] Footer
 
 ## Contributing
 
