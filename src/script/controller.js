@@ -33,6 +33,10 @@ function buttonsController(button) {
     playSound()
     equalButton()
   }
+
+  if (display.textContent === 'NaN') {
+    resetAll()
+  }
 }
 
 function setEventType(e) {
