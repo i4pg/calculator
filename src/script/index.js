@@ -19,6 +19,7 @@ function playSound() {
 
 function resetAll() {
   recentOperation = null
+  isFloat = false
   resetDisplay()
 }
 
