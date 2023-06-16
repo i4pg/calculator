@@ -1,7 +1,7 @@
 const buttonSound = document.getElementById('button-sound')
 const buttons = document.querySelectorAll('.button')
 const display = document.getElementById('display')
-let recentOperation = null // used to handle operation object => {firstOp,secondOp,operator}
+let recentOperation = null // handle operation object => {firstOp,secondOp,operator}
 let isNewOperand = true
 let isFloat = false
 let sound = true
