@@ -36,7 +36,7 @@ function displayResult() {
 }
 
 function backspace() {
-  display.textContent = display.textContent.split('').slice(1).join("")
+  display.textContent = display.textContent.split('').slice(0, -1).join("")
   display.textContent === ""
     ? resetDisplay()
     : ""
