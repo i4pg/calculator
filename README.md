@@ -7,10 +7,42 @@ An online calculator with basic arithmetic operations built using HTML5, CSS3 an
 You can try it online [here](https://i4pg.github.io/calculator).
 
 ## Features
-
+All basic operations are supported (divide, multiple, remainder, add, subtract).
+Operations performed using BEDMAS rule and follows order of precendence from MDN Library.
+Keyboard inputs are supported for numbers, opertaors and other options.
+Comes with options to clear/delete a single input (backspace) OR clear the whole display.
+A Simple Calculator which is built with Modern Javascript practices
+It can evaluate expressions for Multiplication, Division, Subraction, Addition & Modulo Division
+Clean UI for better visuals
+Responsive for both Desktop & Mobile
 <!-- * All basic operations are supported (divide, multiple, remainder, add, subtract). -->
 <!-- * Keyboard inputs are supported for numbers, opertaors and other options. -->
 <!-- * Comes with options to __clear/delete__ a single input (backspace) OR __clear__ the whole display. -->
+
+## Usage
+
+- <details> <summary>For Mobile</summary>
+
+  - ### General
+    - Click the visual buttons to use Calculator
+
+</details>
+
+- <details> <summary>For Desktop</summary>
+
+  - ### General
+    - You can also click visual buttons for access
+    - Refer additional information below
+  - ### Additional 
+    - `Keyboard Supported`
+    - `Backspace Key`: Deletes a value
+    - `Enter Key`: Show the Result
+    - `0-9 Keys`: Takes input for Numbers
+    - `'C' Key`:  Clears the Display
+    - `Operation Keys`: Operates with operands
+</details>
+
+<br>
 
 ## Showcase
 
@@ -45,15 +77,16 @@ Then open the `index.html` file in your web browser to start playing the game.
 
 ### To-do
 
-> NOTE: for now I'll go with old school -Object Constructor-
 
 - [x] OOP 
+> NOTE: for now I'll go with old school -Object Constructor-
 - [x] Calculator Logic
     - [x] Add
     - [x] Subtract
     - [x] Multiply
     - [x] Divide
 - [ ] Calculator UX
+    - [ ] Negative numbers support 
     - [x] Display Numbers
     - [x] Support float numbers
     - [x] Support Infinite operations

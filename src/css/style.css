@@ -2,36 +2,34 @@
 
 /* VARIABLES */
 :root {
-  --liaison: #8d4d5b;
-  --never-forget: #a66f7d;
-  --pink-champagne: #e3dbe8;
-
-  --classy-mauve: #be93a0;
-  --mauvelous: #d6b8c5;
-  --minute-mauve: #eddeeb;
-  --silver-fox: #b8b2bc;
-  --gull: #8f8a92;
-
-  --excalibur: #68646b;
-  --tuxedo: #434046;
+  --graphite-black: #272e30;
+  --stone-cold: #525455;
+  --flint-rock: #9e9694;
+  --fallen-petals: #f1ded9;
+  --olympus-white: #d1d9d9;
+  --wave: #9fc8cf;
+  --sky-dive: #72bbc9;
+  --light-blue: #a1ccda;
+  --blue-silk: #cddceb;
+  --delicate-cloud: #dee1ee;
 }
 
 .dark {
-  --bg: var(--gull);
-  --display: var(--liaison);
-  --numbers: var(--never-forget);
-  --buttons: var(--excalibur);
-  --text: var(--pink-champagne);
-  --icon: var(--liaison);
+  --bg: var(--graphite-black);
+  --display: var(--stone-cold);
+  --numbers: var(--flint-rock);
+  --buttons: var(--sky-dive);
+  --text: var(--delicate-cloud);
+  --icon: var(--wave);
 }
 
 .light {
-  --bg: var(--minute-mauve);
-  --display: var(--mauvelous);
-  --numbers: var(--classy-mauve);
-  --buttons: var(--silver-fox);
-  --text: var(--tuxedo);
-  --icon: var(--liaison);
+  --bg: var(--delicate-cloud);
+  --display: var(--fallen-petals);
+  --numbers: var(--light-blue);
+  --buttons: var(--olympus-white);
+  --text: var(--graphite-black);
+  --icon: var(--blue-silk);
 }
 
 /* RESET */
@@ -92,17 +90,9 @@ header {
 
 /* HEADER NAV */
 
-header nav {
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+header nav  i {
+  font-size: 1.3rem;
   cursor: pointer;
-}
-
-nav lord-icon, nav a img {
-  width: 2em;
-  height: 2em;
 }
 
 /* HEADER SECTION */
@@ -123,7 +113,7 @@ header section p {
 aside {
   padding: 2em;
   position: absolute;
-  width: 40%;
+  width: 60%;
   height: 100%;
   background-color: var(--bg);
   z-index: 999;
@@ -150,7 +140,7 @@ aside .tools div {
 }
 
 aside .tools div:hover {
-  color: var(--display);
+  color: var(--numbers);
 }
 
 #unmute, #light {
@@ -176,8 +166,8 @@ aside .footer i {
   color: var(--text);
 }
 
-i:hover, a.hover {
-  color: var(--display) !important;
+i:hover, a:hover {
+  color: var(--numbers) !important;
 }
 
 aside .footer img {
@@ -193,18 +183,26 @@ main {
   flex-flow: row wrap;
   justify-content: space-between;
   align-items: center;
+  gap: .5em;
 }
 
 main .button {
-  border-radius: 50%;
+  border-radius: 14px;
   width: calc(90% / 4);
-  height: calc(90% / 5);
+  height: calc(90% / 6);
   display: flex;
   justify-content: center;
   align-items: center;
   cursor: pointer;
   background-color: var(--buttons);
   box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  font-size: 1.3rem;
+}
+
+main .wide {
+  /* background-color: var(--display); */
+  flex: 1 1 auto;
+  border-radius: 8px;
 }
 
 
@@ -229,60 +227,4 @@ footer p {
 
 footer a {
   color: var(--numbers);
-}
-
-/* Shrink effect for buttons */
-.hvr-shrink {
-  display: inline-block;
-  vertical-align: middle;
-  -webkit-transform: perspective(1px) translateZ(0);
-  transform: perspective(1px) translateZ(0);
-  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
-  -webkit-transition-duration: 0.3s;
-  transition-duration: 0.3s;
-  -webkit-transition-property: transform;
-  transition-property: transform;
-}
-.hvr-shrink:hover, .hvr-shrink:focus, .hvr-shrink:active {
-  -webkit-transform: scale(0.9);
-  transform: scale(0.9);
-}
-
-/* Pulse */
-@-webkit-keyframes hvr-pulse {
-  25% {
-    -webkit-transform: scale(1.1);
-    transform: scale(1.1);
-  }
-  75% {
-    -webkit-transform: scale(0.9);
-    transform: scale(0.9);
-  }
-}
-@keyframes hvr-pulse {
-  25% {
-    -webkit-transform: scale(1.1);
-    transform: scale(1.1);
-  }
-  75% {
-    -webkit-transform: scale(0.9);
-    transform: scale(0.9);
-  }
-}
-.hvr-pulse {
-  display: inline-block;
-  vertical-align: middle;
-  -webkit-transform: perspective(1px) translateZ(0);
-  transform: perspective(1px) translateZ(0);
-  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
-}
-.hvr-pulse:hover, .hvr-pulse:focus, .hvr-pulse:active {
-  -webkit-animation-name: hvr-pulse;
-  animation-name: hvr-pulse;
-  -webkit-animation-duration: 1s;
-  animation-duration: 1s;
-  -webkit-animation-timing-function: linear;
-  animation-timing-function: linear;
-  -webkit-animation-iteration-count: infinite;
-  animation-iteration-count: infinite;
 }

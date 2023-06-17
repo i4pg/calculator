@@ -1,58 +1,69 @@
+const buttonsRegex = {
+  negative: /^negative$/,
+  digit: /^\d$/,
+  float: /^\.$/,
+  C: /^C$/,
+  AC: /^AC$/,
+  operators: /[\+\-\^\*\/]/,
+  backspace: /^Backspace$/i,
+  evaluate: /=|Enter|\ /,
+};
+
 function operetorController(operator) {
   if (recentOperation && !recentOperation?.secondOperand) {
-    equalButton(operator)
+    evaluate(operator);
   } else {
-    setRecentOperationOperands(operator)
-    resetDisplay()
+    setRecentOperationOperands(operator);
+    resetDisplay();
   }
-  isFloat = false
+  isFloat = false;
 }
 
 function buttonsController(button) {
-  if (/\d/.test(button)) {
-    playSound()
-    newOperandToggle()
-    displayNumberController(button)
-  } else if (/[\.]/.test(button) && !isFloat) {
-    playSound()
-    newOperandToggle()
-    setFloatCalculation()
-  } else if (/^C$/.test(button)) {
-    playSound()
-    resetDisplay()
-  } else if (/^AC$/.test(button)) {
-    playSound()
-    resetAll()
-  } else if (/[\+||\-||\^||\*||\/]/.test(button)) {
-    playSound()
-    operetorController(button)
-  } else if (/Backspace/.test(button)) {
-    playSound()
-    backspace()
-  } else if (/[=||^Enter$]/.test(button) && recentOperation?.firstOperand) {
-    playSound()
-    equalButton()
+  if (!isValidButton(button)) {
+    return;
   }
 
-  if (display.textContent === 'NaN') {
-    resetAll()
+  if (isMathError()) {
+    resetAll();
+  }
+
+  playSound();
+
+  if (buttonsRegex.digit.test(button)) {
+    newOperandToggle();
+    insertToDisplay(button);
+  } else if (buttonsRegex.float.test(button) && !isFloat) {
+    newOperandToggle();
+    setFloatCalculation();
+  } else if (buttonsRegex.C.test(button)) {
+    resetDisplay();
+  } else if (buttonsRegex.AC.test(button)) {
+    resetAll();
+  } else if (buttonsRegex.operators.test(button)) {
+    operetorController(button);
+  } else if (buttonsRegex.backspace.test(button)) {
+    removeLastOperand();
+  } else if (
+    buttonsRegex.evaluate.test(button) &&
+    recentOperation?.firstOperand
+  ) {
+    evaluate();
+  }
+
+  if (isMathError()) {
+    displayErrorMessage();
   }
 }
 
 function setEventType(e) {
-  const event
-    = e.type === 'keyup'
-      ? e.key
-      : e.target.getAttribute('value')
+  const event = e.type === "keyup" ? e.key : e.target.getAttribute("value");
 
-  buttonsController(event)
+  buttonsController(event);
 }
 
-Array
-  .from(buttons)
-  .forEach(button =>
-    button
-      .addEventListener('click', setEventType)
-  )
+Array.from(buttons).forEach((button) =>
+  button.addEventListener("click", setEventType)
+);
 
-addEventListener('keyup', setEventType)
+addEventListener("keyup", setEventType);
