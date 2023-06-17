@@ -4,7 +4,7 @@ const buttonsRegex = {
   float: /^\.$/,
   C: /^C$/,
   AC: /^AC$/,
-  operators: /[\+\-\^\*\/]/,
+  operators: /[\%\+\-\^\*\/]/,
   backspace: /^Backspace$/i,
   evaluate: /=|Enter|\ /,
 };

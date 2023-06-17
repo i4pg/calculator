@@ -1,4 +1,4 @@
-function Calculator() {}
+function Calculator() { }
 
 Calculator.operationController = (operation) => {
   const operator = operation.operator;
@@ -16,28 +16,34 @@ Calculator.operationController = (operation) => {
       return Calculator.divide(firstOperand, secondOperand);
     case "^":
       return Calculator.exponent(firstOperand, secondOperand);
+    case "%":
+      return Calculator.modulo(firstOperand, secondOperand);
 
     default:
       throw new Error(`${operator} is invalid operator`);
   }
 };
 
-Calculator.add = function (x, y) {
+Calculator.add = function(x, y) {
   return x + y;
 };
 
-Calculator.subtract = function (x, y) {
+Calculator.subtract = function(x, y) {
   return x - y;
 };
 
-Calculator.multiply = function (x, y) {
+Calculator.multiply = function(x, y) {
   return x * y;
 };
 
-Calculator.divide = function (x, y) {
+Calculator.divide = function(x, y) {
   return x / y;
 };
 
-Calculator.exponent = function (x, y) {
+Calculator.exponent = function(x, y) {
   return x ** y;
 };
+
+Calculator.modulo = function(x, y) {
+  return x % y
+}
