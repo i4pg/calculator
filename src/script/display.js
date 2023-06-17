@@ -2,7 +2,7 @@ function addHoverEffect(button) {
   // Finally I found a good use case for `var`
   // `let` and `const` available within if block scope
   // `var` available within the function scope
-  // And it's not global variable !
+  // And it's not global variable ! best case ~
   if (buttonsRegex.evaluate.test(button)) {
     var element = document.querySelector(`[value="="]`)
   } else {

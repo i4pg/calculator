@@ -1,48 +1,21 @@
 # Calculator
 
-An online calculator with basic arithmetic operations built using HTML5, CSS3 and JS ES6 features. It can be controlled by a mouse or by a keyboard.
+An online calculator with basic arithmetic operations built using HTML5, CSS3 and JS. It can be controlled by a mouse or by a keyboard.
 
 ## Demo
 
 You can try it online [here](https://i4pg.github.io/calculator).
 
 ## Features
-All basic operations are supported (divide, multiple, remainder, add, subtract).
-Operations performed using BEDMAS rule and follows order of precendence from MDN Library.
-Keyboard inputs are supported for numbers, opertaors and other options.
-Comes with options to clear/delete a single input (backspace) OR clear the whole display.
-A Simple Calculator which is built with Modern Javascript practices
-It can evaluate expressions for Multiplication, Division, Subraction, Addition & Modulo Division
-Clean UI for better visuals
-Responsive for both Desktop & Mobile
-<!-- * All basic operations are supported (divide, multiple, remainder, add, subtract). -->
-<!-- * Keyboard inputs are supported for numbers, opertaors and other options. -->
-<!-- * Comes with options to __clear/delete__ a single input (backspace) OR __clear__ the whole display. -->
 
-## Usage
-
-- <details> <summary>For Mobile</summary>
-
-  - ### General
-    - Click the visual buttons to use Calculator
-
-</details>
-
-- <details> <summary>For Desktop</summary>
-
-  - ### General
-    - You can also click visual buttons for access
-    - Refer additional information below
-  - ### Additional 
-    - `Keyboard Supported`
-    - `Backspace Key`: Deletes a value
-    - `Enter Key`: Show the Result
-    - `0-9 Keys`: Takes input for Numbers
-    - `'C' Key`:  Clears the Display
-    - `Operation Keys`: Operates with operands
-</details>
-
-<br>
+*   All basic operations are supported Multiplication, Division, Subtraction, Addition & Modulo Division
+*   Support negative values
+*   Full Keyboard support including visual effects
+*   Options to clear/delete a single input -backspace- OR clear the whole display -reset operand- OR reset everyting.
+*   Option for toggling sound Effect
+*   Clean UI
+*   Responsive Mobile-First
+*   Dark/Light mode
 
 ## Showcase
 
@@ -85,8 +58,9 @@ Then open the `index.html` file in your web browser to start playing the game.
     - [x] Subtract
     - [x] Multiply
     - [x] Divide
-- [ ] Calculator UX
-    - [ ] Negative numbers support 
+    - [x] Modulo
+- [x] Calculator UX
+    - [x] Negative numbers support 
     - [x] Display Numbers
     - [x] Support float numbers
     - [x] Support Infinite operations
@@ -97,9 +71,9 @@ Then open the `index.html` file in your web browser to start playing the game.
     - [x] Backspace Button
     - [x] Sounds Effects
     - [x] Pressing Enter same as `=` 
-    - [ ] buttons hover effect on click event
+    - [x] buttons hover effect on click event
     - [x] Sounds On/Off
-    - [ ] aside navigation
+    - [x] aside navigation
 - [x] UI
     - [x] Smooth colors
     - [x] Calculator display
