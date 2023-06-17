@@ -10,7 +10,13 @@
   -webkit-transition-property: transform;
   transition-property: transform;
 }
+
 .hvr-shrink:hover, .hvr-shrink:focus, .hvr-shrink:active {
+  -webkit-transform: scale(0.9);
+  transform: scale(0.9);
+}
+
+.kb-hover{
   -webkit-transform: scale(0.9);
   transform: scale(0.9);
 }

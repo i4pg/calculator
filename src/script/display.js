@@ -1,5 +1,7 @@
 function addHoverEffect(button) {
-  button.style.classList.add("hover");
+  const element = document.querySelector(`[value="${button}"]`)
+  element.classList.toggle('kb-hover')
+  setTimeout(() => element.classList.toggle('kb-hover'), 300)
 }
 
 function displayResult() {

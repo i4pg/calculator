@@ -23,6 +23,7 @@ function calculatorController(button) {
   if (isValidButton(button)) {
     isMathError() ? resetAll() : ""
     playSound();
+    addHoverEffect(button)
     buttonController(button)
     isMathError() ? displayErrorMessage() : ""
   }
