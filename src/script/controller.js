@@ -19,49 +19,44 @@ function operetorController(operator) {
   isFloat = false;
 }
 
-function buttonsController(button) {
-  if (!isValidButton(button)) {
-    return;
+function calculatorController(button) {
+  if (isValidButton(button)) {
+    isMathError() ? resetAll() : ""
+    playSound();
+    buttonController(button)
+    isMathError() ? displayErrorMessage() : ""
   }
+}
 
-  if (isMathError()) {
-    resetAll();
-  }
-
-  playSound();
-
-  if (buttonsRegex.digit.test(button)) {
-    newOperandToggle();
-    insertToDisplay(button);
-  } else if (buttonsRegex.float.test(button) && !isFloat) {
-    newOperandToggle();
-    setFloatCalculation();
-  } else if (buttonsRegex.C.test(button)) {
+function buttonController(button) {
+  if (buttonsRegex.C.test(button)) {
     resetDisplay();
   } else if (buttonsRegex.AC.test(button)) {
     resetAll();
-  } else if (buttonsRegex.operators.test(button)) {
-    operetorController(button);
   } else if (buttonsRegex.backspace.test(button)) {
     removeLastOperand();
   } else if (buttonsRegex.negative.test(button)) {
     toggleNegative()
+  } else if (buttonsRegex.operators.test(button)) {
+    operetorController(button);
+  } else if (buttonsRegex.float.test(button) && !isFloat) {
+    newOperandToggle();
+    setFloatCalculation();
+  } else if (buttonsRegex.digit.test(button)) {
+    newOperandToggle();
+    insertToDisplay(button);
   } else if (
     buttonsRegex.evaluate.test(button) &&
     recentOperation?.firstOperand
   ) {
     evaluate();
   }
-
-  if (isMathError()) {
-    displayErrorMessage();
-  }
 }
 
 function setEventType(e) {
   const event = e.type === "keyup" ? e.key : e.target.getAttribute("value");
 
-  buttonsController(event);
+  calculatorController(event);
 }
 
 Array.from(buttons).forEach((button) =>

@@ -6,6 +6,16 @@ let isNewOperand = true;
 let isFloat = false;
 let sound = true;
 
+function isValidButton(userButton) {
+  const validButtons = Object.values(buttonsRegex);
+
+  return validButtons.some((button) => button.test(userButton));
+}
+
+function isNegativeOperand() {
+  return display.textContent.indexOf('-') > -1;
+}
+
 function playSound() {
   if (sound) {
     buttonSound.currentTime = 0;

@@ -22,7 +22,7 @@ function insertToDisplay(number) {
 }
 
 function toggleNegative() {
-  if (display.textContent.indexOf('-') > -1) {
+  if (isNegativeOperand()) {
     positiveValue = display.textContent.split('')
     positiveValue.shift()
     display.textContent = positiveValue.join('')

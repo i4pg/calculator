@@ -7,8 +7,3 @@ function isMathError() {
 function displayErrorMessage() {
   display.textContent = ERROR_MESSAGE;
 }
-
-function isValidButton(userButton) {
-  const validButtons = Object.values(buttonsRegex);
-  return validButtons.some((button) => button.test(userButton));
-}
