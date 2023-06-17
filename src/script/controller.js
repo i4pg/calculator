@@ -44,6 +44,8 @@ function buttonsController(button) {
     operetorController(button);
   } else if (buttonsRegex.backspace.test(button)) {
     removeLastOperand();
+  } else if (buttonsRegex.negative.test(button)) {
+    toggleNegative()
   } else if (
     buttonsRegex.evaluate.test(button) &&
     recentOperation?.firstOperand
