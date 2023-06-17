@@ -1,5 +1,14 @@
 function addHoverEffect(button) {
-  const element = document.querySelector(`[value="${button}"]`)
+  // Finally I found a good use case for `var`
+  // `let` and `const` available within if block scope
+  // `var` available within the function scope
+  // And it's not global variable !
+  if (buttonsRegex.evaluate.test(button)) {
+    var element = document.querySelector(`[value="="]`)
+  } else {
+    var element = document.querySelector(`[value="${button}"]`)
+  }
+
   element.classList.toggle('kb-hover')
   setTimeout(() => element.classList.toggle('kb-hover'), 300)
 }
