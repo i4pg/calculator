@@ -62,6 +62,14 @@ p {
   margin: .2em;
 }
 
+button,
+input,
+select,
+textarea {
+  font-family: inherit;
+  font-size: 100%;
+}
+
 /* BODY */
 
 body {
