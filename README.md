@@ -25,14 +25,7 @@ You can try it online [here](https://i4pg.github.io/calculator).
 
 ### ScreenShots
 
-<!-- ![](./src/image/show.gif) -->
-
-<!-- ![](./src/image/iphone.png) -->
-
-<!-- ![](./src/image/drop.png) -->
-
-<!-- ![](./src/image/hd.png) -->
-
+![](./src/image/ezgif.com-gif-maker.gif)
 
 ## Getting Started
 
